@@ -1,11 +1,14 @@
 package com.example.crud_fiscal.domain.entities;
 
+import com.example.crud_fiscal.persistence.dto.entities.FiscalPositionDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -21,4 +24,7 @@ public class Category {
 
     @Column(name = "name", nullable = false)
     private String name;
+
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private List<FiscalPosition> listFiscalPosition= new ArrayList<>();
 }

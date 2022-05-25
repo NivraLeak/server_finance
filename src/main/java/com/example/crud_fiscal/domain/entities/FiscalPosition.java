@@ -33,4 +33,8 @@ public class FiscalPosition {
 
     @Column(name = "gdp", nullable = false)
     private Float gdp;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", unique = true)
+    private Category category;
 }
