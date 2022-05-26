@@ -1,5 +1,6 @@
 package com.example.crud_fiscal.exception;
 
+import com.example.crud_fiscal.persistence.dto.error.ErrorDto;
 import org.springframework.http.HttpStatus;
 
 import java.util.Arrays;

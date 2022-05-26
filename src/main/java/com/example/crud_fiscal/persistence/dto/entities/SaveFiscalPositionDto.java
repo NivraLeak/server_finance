@@ -1,7 +1,11 @@
 package com.example.crud_fiscal.persistence.dto.entities;
 
 import com.example.crud_fiscal.domain.entities.State;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class SaveFiscalPositionDto {
 
     private Integer yearBalance;
