@@ -1,4 +1,6 @@
-package com.example.crud_fiscal.persistence.dto.error;
+package com.example.crud_fiscal.exception;
+
+import com.example.crud_fiscal.persistence.dto.error.ErrorDto;
 
 import java.util.ArrayList;
 import java.util.List;

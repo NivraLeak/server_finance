@@ -2,7 +2,7 @@ package com.example.crud_fiscal.domain.service;
 
 import com.example.crud_fiscal.persistence.dto.entities.FiscalPositionDto;
 import com.example.crud_fiscal.persistence.dto.entities.SaveFiscalPositionDto;
-import com.example.crud_fiscal.persistence.dto.error.ErrorException;
+import com.example.crud_fiscal.exception.ErrorException;
 
 import java.util.List;
 
