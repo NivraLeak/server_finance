@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/fiscal"+"/position")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class FiscalPositionController {
     private final FiscalPositionService fiscalPositionService;
 
