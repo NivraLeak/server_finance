@@ -34,7 +34,7 @@ public class CategoryController {
 
     //Update category by id
     @ResponseStatus(HttpStatus.OK)
-    @PostMapping("/update/{categoryId}")
+    @PutMapping("/update/{categoryId}")
     @ApiOperation(value = "Update entity")
     public Response<CategoryDto> updateCategory(@RequestBody @Validated SaveCategoryDto saveCategoryDto, @PathVariable Integer categoryId) throws ErrorException{
         return new Response<>("Succes",String.valueOf(HttpStatus.OK),"ok", this.categoryService.updateCategoryById(categoryId,saveCategoryDto));
@@ -48,9 +48,18 @@ public class CategoryController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/get/{categoryId}")
+    @ApiOperation(value = "Get category by id")
+    public Response<CategoryDto> getCategoryById(@PathVariable Integer categoryId) throws ErrorException{
+        return new Response<>("Succes",String.valueOf(HttpStatus.OK),"ok",this.categoryService.getCategoryById(categoryId));
+    }
+
+    @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/delete/{categoryId}")
     @ApiOperation(value = "Delete category by id")
     public Response<String> deleteCategoryById(@PathVariable Integer categoryId) throws ErrorException{
         return new Response<>("Succes",String.valueOf(HttpStatus.OK),"ok",this.categoryService.deleteCategoryById(categoryId));
     }
+
+
 }

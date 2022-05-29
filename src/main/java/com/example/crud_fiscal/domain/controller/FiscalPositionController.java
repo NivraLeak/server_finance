@@ -33,7 +33,7 @@ public class FiscalPositionController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PostMapping("/update/{fiscalPositionId}")
+    @PutMapping("/update/{fiscalPositionId}")
     @ApiOperation(value = "Update entity")
     public Response<FiscalPositionDto> updateFiscalPosition(@RequestBody @Validated SaveFiscalPositionDto saveFiscalPositionDto, Integer fiscalPositionId) throws ErrorException{
         return new Response<>("Success",String.valueOf(HttpStatus.OK),"ok",this.fiscalPositionService.updateFiscalPositionById(fiscalPositionId,saveFiscalPositionDto));
