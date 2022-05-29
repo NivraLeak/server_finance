@@ -12,6 +12,8 @@ public interface CategoryService {
     CategoryDto updateCategoryById(Integer categoryId, SaveCategoryDto saveCategoryDto) throws ErrorException;
     List<CategoryDto> listAllCategory() throws ErrorException;
     CategoryDto getCategoryById(Integer categoryId) throws ErrorException;
+
+    CategoryDto getCategoryByName(String nameCategory) throws ErrorException;
     String deleteCategoryById(Integer categoryId) throws ErrorException;
 
 }

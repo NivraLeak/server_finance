@@ -62,6 +62,17 @@ public class CategoryPositionServiceImpl implements CategoryService {
     }
 
     @Override
+    public CategoryDto getCategoryByName(String nameCategory) throws ErrorException {
+        Category category;
+        try {
+            category = this.categoryRepository.findByName(nameCategory);
+        }catch (final Exception e){
+            throw new NotFoundException("SNOT-404-1","ID_CATEGORY_NOT_FOUND");
+        }
+        return this.categoryMapper.toDto(category);
+    }
+
+    @Override
     public String deleteCategoryById(Integer categoryId) throws ErrorException {
         try {
             this.categoryRepository.deleteById(categoryId);
