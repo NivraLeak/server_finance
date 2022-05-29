@@ -55,6 +55,14 @@ public class CategoryController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/getByName/{categoryName}")
+    @ApiOperation(value = "Get category by name")
+    public Response<CategoryDto> getCategoryByName(@PathVariable String categoryName) throws ErrorException{
+        return new Response<>("Succes",String.valueOf(HttpStatus.OK),"ok",this.categoryService.getCategoryByName(categoryName));
+    }
+
+
+    @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/delete/{categoryId}")
     @ApiOperation(value = "Delete category by id")
     public Response<String> deleteCategoryById(@PathVariable Integer categoryId) throws ErrorException{
