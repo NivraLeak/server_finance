@@ -55,10 +55,11 @@ public class CategoryController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/getByName/{categoryName}")
+    @GetMapping("/getByName/{name}")
     @ApiOperation(value = "Get category by name")
-    public Response<CategoryDto> getCategoryByName(@PathVariable String categoryName) throws ErrorException{
-        return new Response<>("Succes",String.valueOf(HttpStatus.OK),"ok",this.categoryService.getCategoryByName(categoryName));
+    public Response<CategoryDto> getCategoryByName(@PathVariable String name) throws ErrorException{
+        System.out.println("nombre categoria: " + name);
+        return new Response<>("Succes",String.valueOf(HttpStatus.OK),"ok",this.categoryService.getCategoryByName(name));
     }
 
 

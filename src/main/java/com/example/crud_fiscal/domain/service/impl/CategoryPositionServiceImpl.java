@@ -63,7 +63,7 @@ public class CategoryPositionServiceImpl implements CategoryService {
 
     @Override
     public CategoryDto getCategoryByName(String nameCategory) throws ErrorException {
-        Category category;
+        Category category = new Category();
         try {
             category = this.categoryRepository.findByName(nameCategory);
         }catch (final Exception e){
